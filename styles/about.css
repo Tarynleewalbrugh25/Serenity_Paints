@@ -1,0 +1,35 @@
+*
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Satisfy&family=Sintony&display=swap');
+.serenity {
+    font-family: 'Satisfy', cursive; /
+}
+.Serenity p {
+    font-family: 'Calligraffitti', cursive; 
+    color:black;
+    font-size: 20px;
+}
+
+#content{
+    backdrop-filter: blur(2rem);
+    border: 1px solid-transparent;
+    border-radius: 30px;
+}
+.navbar {
+    background-color:#f3f3f3;
+}
+footer{
+    background-color: aliceblue;
+    text-align: center;
+    padding: 10px;
+  }
+body{
+    background-image: url('https://i.postimg.cc/m26spC6q/istockphoto-491242813-612x612.jpg');
+    background-size: cover;
+    background-position: center;
+  }
