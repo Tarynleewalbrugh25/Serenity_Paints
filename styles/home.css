@@ -1,0 +1,28 @@
+*
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+  background-color:#f3f3f3;
+}
+.display-2 {
+  font-family: 'Calligraffitti', cursive;
+  font-family: 'Satisfy', cursive;
+  font-family: 'Sintony', sans-serif;
+}
+h2.display-2 span {
+    display: block;
+}
+body{
+  background-image: url('https://i.postimg.cc/cL9hJnxQ/debby-hudson-Ni-Qjj-Enf-S-c-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+}
+footer{
+  background-color: aliceblue;
+  text-align: center;
+  padding: 10px;
+}
