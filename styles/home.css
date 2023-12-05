@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 .navbar {
-  background-color:#f3f3f3;
+  background-color:#5EA9BE;
 }
 .display-2 {
   font-family: 'Calligraffitti', cursive;
@@ -17,12 +17,12 @@ h2.display-2 span {
     display: block;
 }
 body{
-  background-image: url('https://i.postimg.cc/cL9hJnxQ/debby-hudson-Ni-Qjj-Enf-S-c-unsplash.jpg');
+  background-image: url('https://i.postimg.cc/T1XG1MsC/bady-qb-42758-unsplash.webp');
   background-size: cover;
   background-position: center;
 }
 footer{
-  background-color: aliceblue;
+  background-color:#5EA9BE;
   text-align: center;
   padding: 10px;
 }

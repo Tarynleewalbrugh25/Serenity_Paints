@@ -1,0 +1,23 @@
+*
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    background-color:#5EA9BE;
+}                                                                                                           
+footer{
+    background-color: #5EA9BE;
+    text-align: center;
+    padding: 10px;
+}
+body{
+    background-image: url('https://i.postimg.cc/CKWg2cBV/istockphoto-1299542566-612x612.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+.card{
+width: 18rem;
+}
