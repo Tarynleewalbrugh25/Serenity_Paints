@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Satisfy&family=Sintony&display=swap');
 *
 *::after,
 *::before{
@@ -5,7 +6,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Satisfy&family=Sintony&display=swap');
 .serenity {
     font-family: 'Satisfy', cursive; /
 }
@@ -14,17 +14,11 @@
     color:black;
     font-size: 20px;
 }
-
-#content{
-    backdrop-filter: blur(2rem);
-    border: 1px solid-transparent;
-    border-radius: 30px;
-}
 .navbar {
-    background-color:#f3f3f3;
+    background-color:#5EA9BE;
 }
 footer{
-    background-color: aliceblue;
+    background-color:#5EA9BE;
     text-align: center;
     padding: 10px;
   }
