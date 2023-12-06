@@ -1,8 +1,7 @@
 
 let products = JSON.parse(localStorage.getItem('products')) || [
     {
-        id: 'product1',
-        title: '',
+        id: 1,
         year: 2023,
         make: 'Amy',
         image: "https://i.postimg.cc/xTJLZnxJ/360-F-76809767-Gb6-A91-Jm9-Dvd-Fe6-Uu-UHQkzhc-Uy-Yj-ZCJf.jpg",
@@ -10,8 +9,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         description: 'Description for Product 1'
     },
     {
-        id: 'product2',
-        title: '',
+        id: 2,
         year: 2023,
         make: 'Miles',
         image: "https://i.postimg.cc/sfGCxVYc/abstract-colorful-oil-acrylic-painting-600nw-2259644567.webp",
@@ -19,8 +17,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         description: 'Beautiful bird painting'
     },
     {
-        id : 'product3',
-        title: '',
+        id : 3,
         year : 2023,
         make : 'Luke',
         image :"https://i.postimg.cc/2jQT2MrY/portraits.jpg",
@@ -28,8 +25,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         description: 'Description for Product 3'
     },
     {
-        id : 'product4',
-        title: '',
+        id : 4,
         year : 2023,
         make : 'Linda',
         image : "https://i.postimg.cc/bryn669Y/River-Landscape-canvas-oil-Adriaen-van-de-1663.webp",
@@ -37,37 +33,77 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         description: 'Description for Product 4'
     },
     {
-        id : 'product5',
-        title: '',
+        id : 5,
         year : 2023,
         make : 'liam',
         image :"https://i.postimg.cc/QCcXTsTH/360-F-273227473-N0-WRQu-X3u-ZCJJxl-HKYZF44ua-JAkh2x-LG.jpg",
         price : 22001,
         description: 'Description for Product 5'
+    },
+    {
+        id : 6,
+        year : 2023,
+        make : 'Tae',
+        image :"https://i.postimg.cc/tgsxCCMK/4-23-4-22-8-4-13m.jpg",
+        price : 1230,
+        description: 'Description for Product 5'
+    },
+    {
+        id : 7,
+        year : 2023,
+        make : 'Rm',
+        image :"https://i.postimg.cc/QCcXTsTH/360-F-273227473-N0-WRQu-X3u-ZCJJxl-HKYZF44ua-JAkh2x-LG.jpg",
+        price : 19949,
+        description: 'Description for Product 5'
+    },
+    {
+        id : 8,
+        year : 2023,
+        make : 'Jin',
+        image :"https://i.postimg.cc/1thCSTzZ/5-Small-but-Famous-Oil-Paintings-3h23gx8wfeu51t7jyudedm.jpg",
+        price : 92124,
+        description: 'Description for Product 5'
+    },
+    {
+        id : 9,
+        year : 2023,
+        make : 'Sug',
+        image :"https://i.postimg.cc/k4LfspkH/9525299-SNGKTDKW-7.jpg",
+        price : 9303,
+        description: 'Description for Product 5'
+    },
+    {
+        id : 10,
+        year : 2023,
+        make : 'hope',
+        image :"https://i.postimg.cc/MK1fvFtG/acrylics-balcony-cat-large.webp",
+        price : 22001,
+        description: 'Description for Product 5'
     }
 ]
+let pay = []
 localStorage.setItem('products', JSON.stringify(products));
 let productWrapper = document.querySelector('[data-products]');
 let searchProduct = document.querySelector('[search]')
 let btnSort = document.querySelector('[cat]')
+let btnCart = document.getElementsByClassName('btn btn-primary')
 
 
 function displayProducts() {
     productWrapper.innerHTML = "";
     products.forEach(product => {
         productWrapper.innerHTML += `
-            <div class="card">
+            <div class="card m-3">
                 <img src="${product.image}" class="card-img-top" alt="${product.id}">
                 <div class="card-body">
                     <h5 class="card-title">${product.make}</h5>
                     <p class="card-text">${product.price}</p>
-                    <button class="btn btn-primary">Cart</button>
+                    <button type='button' class="btn btn-primary" onclick='addToPay(${JSON.stringify(product)})'>Cart</button>
                 </div>
             </div>
         `;
     });
 }
-
 displayProducts();
 //function for search 
 searchProduct.addEventListener('keyup', () => {
@@ -145,7 +181,7 @@ function sortingProducts(sorted) {
                 <div class="card-body">
                     <h5 class="card-title">${product.make}</h5>
                     <p class="card-text">${product.price}</p>
-                    <button class="btn btn-primary">Cart</button>
+                    <button data-buy>Cart</button>
                 </div>
             </div>
         `;
@@ -153,6 +189,12 @@ function sortingProducts(sorted) {
 }
 
 
-
+function addToPay(item) {
+    console.log(item);
+    if(item){
+        pay.push(item)
+        localStorage.setItem('pay', JSON.stringify(pay));
+    }
+}
 
 
