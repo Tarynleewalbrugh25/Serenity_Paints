@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Playfair+Display:ital,wght@1,600&family=Satisfy&family=Sintony&display=swap');
 *
 *::after,
 *::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+.heading {
+    font-family: 'Calligraffitti', cursive; /
+}
+.heading {
+    font-family: 'Calligraffitti', cursive;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Satisfy', cursive;
+    font-family: 'Sintony', sans-serif;
 }
 .navbar {
   background-color:#5EA9BE;
@@ -25,4 +35,7 @@ footer{
   background-color:#5EA9BE;
   text-align: center;
   padding: 10px;
+}
+.card{
+    width: 15rem;
 }
