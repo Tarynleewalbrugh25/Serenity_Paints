@@ -1,9 +1,12 @@
+//footer
+let date = document.querySelector('[Year]')
+date.textContent = new Date().getFullYear()
 
 let products = JSON.parse(localStorage.getItem('products')) || [
     {
         id: 1,
         year: 2008,
-        Artist: 'Amy',
+        make: 'Amy',
         image: "https://i.postimg.cc/xTJLZnxJ/360-F-76809767-Gb6-A91-Jm9-Dvd-Fe6-Uu-UHQkzhc-Uy-Yj-ZCJf.jpg",
         price: 2000,
         description: ''
@@ -11,7 +14,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
     {
         id: 2,
         year: 2011,
-        Artist: 'Miles',
+        make: 'Miles',
         image: "https://i.postimg.cc/sfGCxVYc/abstract-colorful-oil-acrylic-painting-600nw-2259644567.webp",
         price: 35000,
         description: 'Beautiful bird painting'
@@ -19,7 +22,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
     {
         id : 3,
         year : 2005,
-        Artist : 'Luke',
+        make : 'Luke',
         image :"https://i.postimg.cc/2jQT2MrY/portraits.jpg",
         price : 12000,
         description: 'Description for Product 3'
@@ -35,53 +38,53 @@ let products = JSON.parse(localStorage.getItem('products')) || [
     {
         id : 5,
         year : 2013,
-        Artist : 'liam',
+        make : 'liam',
         image :"https://i.postimg.cc/QCcXTsTH/360-F-273227473-N0-WRQu-X3u-ZCJJxl-HKYZF44ua-JAkh2x-LG.jpg",
         price : 22001,
         description: 'Description for Product 5'
+    },
+    {
+        id : 6,
+        year : 2020,
+        make : 'Tae',
+        image :"https://i.postimg.cc/tgsxCCMK/4-23-4-22-8-4-13m.jpg",
+        price : 1230,
+        description: 'Description for Product 5'
+    },
+    {
+        id : 7,
+        year : 2018,
+        make : 'Rm',
+        image :"https://i.postimg.cc/QCcXTsTH/360-F-273227473-N0-WRQu-X3u-ZCJJxl-HKYZF44ua-JAkh2x-LG.jpg",
+        price : 19949,
+        description: 'Description for Product 5'
+    },
+    {
+        id : 8,
+        year : 2021,
+        make : 'Jin',
+        image :"https://i.postimg.cc/1thCSTzZ/5-Small-but-Famous-Oil-Paintings-3h23gx8wfeu51t7jyudedm.jpg",
+        price : 92124,
+        description: 'Description for Product 5'
+    },
+    {
+        id : 9,
+        year : 2015,
+        make : 'Sug',
+        image :"https://i.postimg.cc/k4LfspkH/9525299-SNGKTDKW-7.jpg",
+        price : 9303,
+        description: 'Description for Product 5'
+    },
+    {
+        id : 10,
+        year : 1999,
+        make : 'hope',
+        image :"https://i.postimg.cc/MK1fvFtG/acrylics-balcony-cat-large.webp",
+        price : 22001,
+        description: 'Description for Product 5'
     }
-    //{
-    //    id : 6,
-    //    year : 2020,
-    //    Artist : 'Tae',
-    //    image :"https://i.postimg.cc/tgsxCCMK/4-23-4-22-8-4-13m.jpg",
-    //    price : 1230,
-    //    description: 'Description for Product 5'
-    //},
-    //{
-    //    id : 7,
-    //    year : 2018,
-    //    Artist : 'Rm',
-    //    image :"https://i.postimg.cc/QCcXTsTH/360-F-273227473-N0-WRQu-X3u-ZCJJxl-HKYZF44ua-JAkh2x-LG.jpg",
-    //    price : 19949,
-    //    description: 'Description for Product 5'
-    //},
-    //{
-    //    id : 8,
-    //    year : 2021,
-    //    Artist : 'Jin',
-    //    image :"https://i.postimg.cc/1thCSTzZ/5-Small-but-Famous-Oil-Paintings-3h23gx8wfeu51t7jyudedm.jpg",
-    //    price : 92124,
-    //    description: 'Description for Product 5'
-    //},
-    //{
-    //    id : 9,
-    //    year : 2015,
-    //    Artist : 'Sug',
-    //    image :"https://i.postimg.cc/k4LfspkH/9525299-SNGKTDKW-7.jpg",
-    //    price : 9303,
-    //    description: 'Description for Product 5'
-    //},
-    //{
-    //    id : 10,
-    //    year : 1999,
-    //    Artist : 'hope',
-    //    image :"https://i.postimg.cc/MK1fvFtG/acrylics-balcony-cat-large.webp",
-    //    price : 22001,
-    //    description: 'Description for Product 5'
-    //}
 ]
-let pay = []
+let pay = JSON.parse(localStorage.getItem('pay')) || []
 localStorage.setItem('products', JSON.stringify(products));
 let productWrapper = document.querySelector('[data-products]');
 let searchProduct = document.querySelector('[search]')
@@ -96,13 +99,10 @@ function displayProducts() {
             <div class="card m-3">
                 <img src="${product.image}" class="card-img-top" alt="${product.id}">
                 <div class="card-body">
-                    <h5 class="card-title">${product.Artist}</h5>
+                    <h5 class="card-title">${product.make}</h5>
                     <p class="card-text">${product.price}</p>
                     <button type='button' class="btn btn-primary" onclick='addToPay(${JSON.stringify(product)})'>Cart</button>
-                    <div class="spinner-border m-5" role="status">
-                     <span class="visually-hidden">Loading...</span>
-                     </div>
-                    </div>
+               </div>
             </div>
         `;
     });
@@ -123,7 +123,7 @@ searchProduct.addEventListener('keyup', () => {
                     <div class="card">
                         <img src="${item.image}" class="card-img-top" alt="${item.id}">
                         <div class="card-body">
-                            <h5 class="card-title">${item.Artist}</h5>
+                            <h5 class="card-title">${item.make}</h5>
                             <p class="card-text">${item.price}</p>
                             <button class="btn btn-primary"onclick='addToPay(${JSON.stringify(product)})>Cart</button>
                         </div>
@@ -153,7 +153,7 @@ searchProduct.addEventListener('keyup', () => {
         console.error(error);
     }
 });
-
+//sort function
 let toggle = false;
 btnSort.addEventListener('click', function () {
     if(!toggle) {
@@ -161,14 +161,14 @@ btnSort.addEventListener('click', function () {
             return a.price - b.price
         }) 
         sortingProducts(sorted)
-        btnSort.textContent = 'Sorting price from highest'
+        btnSort.textContent = 'Sort highest'
         toggle = true
     }else {
         let sorted = products.sort( (a, b)=>{
             return b.price - a.price
         }) 
         sortingProducts(sorted)
-        btnSort.textContent = 'Sorting price from lowest'
+        btnSort.textContent = 'Sort lowest'
         toggle = false
     }
 
@@ -179,12 +179,13 @@ function sortingProducts(sorted) {
     productWrapper.innerHTML = ""
     sorted.forEach(product => {
         productWrapper.innerHTML += `
-            <div class="card">
+            <div class="card m-3">
                 <img src="${product.image}" class="card-img-top" alt="${product.id}">
                 <div class="card-body">
                     <h5 class="card-title">${product.make}</h5>
                     <p class="card-text">${product.price}</p>
-                    <button data-buy>Cart</button>
+                    
+                    <button data-buy class="btn btn-info">Cart</button>
                 </div>
             </div>
         `;

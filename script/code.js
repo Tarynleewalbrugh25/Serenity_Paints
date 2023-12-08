@@ -1,2 +1,3 @@
 //footer
-//document.getElementBy(currYear).textContent = new Date().getUTCFullYear
+let date = document.querySelector('[Year]')
+date.textContent = new Date().getFullYear()
