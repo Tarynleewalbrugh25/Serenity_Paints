@@ -175,24 +175,7 @@ function updating() {
 
 
 
-//let make = document.getElementById('make')
-//let year = document.getElementById('year')
-//let image = document.getElementById('image')
-//let price = document.getElementById('price')
-//add func
-//function addProduct(newProd) {
-//    let newProduct = {
-//        id :products.length + 1,
-//        make :make,
-//        year :year,
-//        image :image,
-//        price :price,
-//    }
-//    let products = JSON.parse(localStorage.getItem('products')) || []
-//    products.push(newproduct)
-//    localStorage.setItem('products',JSON.stringify(products))
-//    displayProducts()
-//}
+
 
 
 

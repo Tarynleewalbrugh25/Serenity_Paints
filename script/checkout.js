@@ -3,9 +3,10 @@ let date = document.querySelector('[Year]')
 date.textContent = new Date().getFullYear()
 
 
-//display local storage
 let payItems = JSON.parse(localStorage.getItem('pay')) || []
 let tableBod = document.getElementById('TableBCART')
+
+
 function displayPay() {
      tableBod.innerHTML = ''
      let uniqueItems = Object.groupBy(payItems, item=> item.id)
@@ -26,3 +27,4 @@ function displayPay() {
    
 }
 displayPay()
+ 
