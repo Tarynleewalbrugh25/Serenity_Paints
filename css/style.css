@@ -37,8 +37,24 @@ footer{
   padding: 10px;
 }
 .card{
-    width: 15rem;
+    width: 12rem;
 }
-.table table-sm{
+@media screen and (max-width:767px) {
+  .table{
+    width: 100%;
+ }
+
+  th, td {
+    text-align: center;
+  }
+  .row w-50{
+    width: 100%;
+    text-align: center;
+  }
+  .col w-50{
+    width: 100%;
   
+  }
 }
+
+
