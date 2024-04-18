@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Playfair+Display:ital,wght@1,600&family=Satisfy&family=Sintony&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 *
 *::after,
 *::before{
@@ -6,33 +6,37 @@
     padding: 0;
     box-sizing: border-box;
 }
-.heading {
-    font-family: 'Calligraffitti', cursive; /
+*{
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 }
-.heading {
-    font-family: 'Calligraffitti', cursive;
-    font-family: 'Playfair Display', serif;
-    font-family: 'Satisfy', cursive;
-    font-family: 'Sintony', sans-serif;
+.hh {
+  background-color: #49b0c0;
 }
-.navbar {
-  background-color:#5EA9BE;
+.para{
+  margin-top: 20vh;
+  text-decoration: none;
+  font-weight: bold;
+  /* opacity: 50% !important; */
+  }
+.card{
+  /* opacity: 50%; */
+  background: transparent;
 }
-.display-2 {
-  font-family: 'Calligraffitti', cursive;
-  font-family: 'Satisfy', cursive;
-  font-family: 'Sintony', sans-serif;
-}
-h2.display-2 span {
-    display: block;
-}
+
+
 body{
-  background-image: url('https://i.postimg.cc/T1XG1MsC/bady-qb-42758-unsplash.webp');
+  background-image: url('https://i.ibb.co/7kT0x4n/abstract-background-that-captures-the-essence-of-tranquility-and-serenity-free-photo.jpg');
   background-size: cover;
   background-position: center;
 }
+.navbar{
+  background-color: #49b0c0;
+}
 footer{
-  background-color:#5EA9BE;
+  background-color:#49b0c0;
   text-align: center;
   padding: 10px;
 }
