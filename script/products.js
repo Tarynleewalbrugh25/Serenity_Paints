@@ -96,14 +96,18 @@ function displayProducts() {
     productWrapper.innerHTML = "";
     products.forEach(product => {
         productWrapper.innerHTML += `
-            <div class="card m-3">
-                <img src="${product.image}" class="card-img-top" alt="${product.id}">
-                <div class="card-body">
-                    <h5 class="card-title">${product.make}</h5>
-                    <p class="card-text">${product.price}</p>
-                    <button type='button' class="btn btn-primary" onclick='addToPay(${JSON.stringify(product)})'>Cart</button>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col-md-4">
+            <div class="card h-100">
+              <img src="${product.image}" class="card-img-top" alt="${product.id}">
+               <div class="card-body">
+                 <h5 class="card-title">${product.make}</h5>
+                  <p class="card-text">${product.price}</p>
+                  <button type='button' class="btn btn-primary" onclick='addToPay(${JSON.stringify(product)})'>Cart</button>
                </div>
             </div>
+         </div>
+        </div
         `;
     });
 }
