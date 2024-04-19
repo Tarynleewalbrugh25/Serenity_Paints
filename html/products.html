@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Serenity Paints</title>
 </head>
@@ -47,7 +48,7 @@
 </nav>
 
 <body>
-  <main class="container-fluid d-block  justify-content-center text-center">
+  <main class="container-fluid  justify-content-center text-center">
     <div class="Serenity">
       <h1 class="heading m-3 text-center text-white">Products</h1>
       <div class="row">
@@ -55,15 +56,15 @@
           <input type="text" search class="form-control" placeholder="Search" required data-search>
         </div>
         <div class="col m-3">
-          <button class="btn btn-light" type="button" cat>Sort</button>
+          <button class="btn btn-light" type="button" cat><i class="bi bi-sort-numeric-up-alt"></i></button>
         </div>
       </div>
     </div>
-    <div class="row d-flex justify-content-center" data-products></div>
+    <div class="row row-cols-1 row-cols-md-3 g-4" data-products></div>
     </div>
     </div>
   </main>
-  <footer class="container-fluid fixed-bottom">
+  <footer class="container-fluid fixed-bottom" id="footer">
     <div class="row">
       <p class="lead">Serenity &copy;<span Year></span></p>
     </div>

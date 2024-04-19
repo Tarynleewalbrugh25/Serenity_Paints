@@ -2,12 +2,12 @@
 let date = document.querySelector('[Year]')
 date.textContent = new Date().getFullYear()
 
-let products = JSON.parse(localStorage.getItem('products')) || [
+let products = JSON.parse(localStorage.getItem('product')) || [
     {
         id: 1,
         year: 2008,
         make: 'Amy',
-        image: "https://i.postimg.cc/xTJLZnxJ/360-F-76809767-Gb6-A91-Jm9-Dvd-Fe6-Uu-UHQkzhc-Uy-Yj-ZCJf.jpg",
+        image: "https://i.ibb.co/jG6h9Vy/3.jpg",
         price: 2000,
         description: ''
     },
@@ -15,7 +15,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id: 2,
         year: 2011,
         make: 'Miles',
-        image: "https://i.postimg.cc/sfGCxVYc/abstract-colorful-oil-acrylic-painting-600nw-2259644567.webp",
+        image: "https://i.ibb.co/CbWVr0h/2.jpg",
         price: 35000,
         description: 'Beautiful bird painting'
     },
@@ -23,7 +23,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id : 3,
         year : 2005,
         make : 'Luke',
-        image :"https://i.postimg.cc/2jQT2MrY/portraits.jpg",
+        image :"",
         price : 12000,
         description: 'Description for Product 3'
     },
@@ -31,7 +31,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id : 4,
         year : 2023,
         make : 'Linda',
-        image : "https://i.postimg.cc/bryn669Y/River-Landscape-canvas-oil-Adriaen-van-de-1663.webp",
+        image : "",
         price : 22500,
         description: 'Description for Product 4'
     },
@@ -39,7 +39,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id : 5,
         year : 2013,
         make : 'liam',
-        image :"https://i.postimg.cc/QCcXTsTH/360-F-273227473-N0-WRQu-X3u-ZCJJxl-HKYZF44ua-JAkh2x-LG.jpg",
+        image :"",
         price : 22001,
         description: 'Description for Product 5'
     },
@@ -47,7 +47,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id : 6,
         year : 2020,
         make : 'Tae',
-        image :"https://i.postimg.cc/tgsxCCMK/4-23-4-22-8-4-13m.jpg",
+        image :"",
         price : 1230,
         description: 'Description for Product 5'
     },
@@ -55,7 +55,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id : 7,
         year : 2018,
         make : 'Rm',
-        image :"https://i.postimg.cc/QCcXTsTH/360-F-273227473-N0-WRQu-X3u-ZCJJxl-HKYZF44ua-JAkh2x-LG.jpg",
+        image :"",
         price : 19949,
         description: 'Description for Product 5'
     },
@@ -63,7 +63,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id : 8,
         year : 2021,
         make : 'Jin',
-        image :"https://i.postimg.cc/1thCSTzZ/5-Small-but-Famous-Oil-Paintings-3h23gx8wfeu51t7jyudedm.jpg",
+        image :"",
         price : 92124,
         description: 'Description for Product 5'
     },
@@ -71,7 +71,7 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id : 9,
         year : 2015,
         make : 'Sug',
-        image :"https://i.postimg.cc/k4LfspkH/9525299-SNGKTDKW-7.jpg",
+        image :"",
         price : 9303,
         description: 'Description for Product 5'
     },
@@ -79,13 +79,13 @@ let products = JSON.parse(localStorage.getItem('products')) || [
         id : 10,
         year : 1999,
         make : 'hope',
-        image :"https://i.postimg.cc/MK1fvFtG/acrylics-balcony-cat-large.webp",
+        image :"",
         price : 22001,
         description: 'Description for Product 5'
     }
 ]
 let pay = JSON.parse(localStorage.getItem('pay')) || []
-localStorage.setItem('products', JSON.stringify(products));
+localStorage.setItem('product', JSON.stringify(products));
 let productWrapper = document.querySelector('[data-products]');
 let searchProduct = document.querySelector('[search]')
 let btnSort = document.querySelector('[cat]')
@@ -96,18 +96,17 @@ function displayProducts() {
     productWrapper.innerHTML = "";
     products.forEach(product => {
         productWrapper.innerHTML += `
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col-md-4">
+              <div class="col">
             <div class="card h-100">
-              <img src="${product.image}" class="card-img-top" alt="${product.id}">
-               <div class="card-body">
-                 <h5 class="card-title">${product.make}</h5>
-                  <p class="card-text">${product.price}</p>
-                  <button type='button' class="btn btn-primary" onclick='addToPay(${JSON.stringify(product)})'>Cart</button>
-               </div>
+            <img src="${product.image}" class="card-img-top" alt="${product.id}">
+            <div class="card-body">
+            <h5 class="card-title">${product.make}</h5>
+            <p class="card-text">${product.price}</p>
             </div>
-         </div>
-        </div
+              <div class="card-footer">
+              <button type='button' class="btn btn-primary" onclick='addToPay(${JSON.stringify(product)})'>Cart</button>
+              </div>
+            </div>
         `;
     });
 }
@@ -165,14 +164,14 @@ btnSort.addEventListener('click', function () {
             return a.price - b.price
         }) 
         sortingProducts(sorted)
-        btnSort.textContent = 'Sort highest'
+        btnSort.textContent = '>'
         toggle = true
     }else {
         let sorted = products.sort( (a, b)=>{
             return b.price - a.price
         }) 
         sortingProducts(sorted)
-        btnSort.textContent = 'Sort lowest'
+        btnSort.textContent = '<'
         toggle = false
     }
 

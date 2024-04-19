@@ -28,6 +28,7 @@ body{
   background-image: url('https://i.ibb.co/7kT0x4n/abstract-background-that-captures-the-essence-of-tranquility-and-serenity-free-photo.jpg');
   background-size: cover;
   background-position: center;
+  height: 100vh;
 }
 .navbar{
   background-color: #49b0c0;
@@ -40,6 +41,13 @@ footer{
 .card{
     width: 12rem;
     background-color:transparent;
+}
+.row-cols-1{
+  margin-left: 12%;
+}
+.form-control{
+  margin-left: 25%;
+  margin-bottom: 15%;
 }
 @media screen and (max-width:767px) {
   .table{
