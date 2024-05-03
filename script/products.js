@@ -23,7 +23,7 @@ let products = JSON.parse(localStorage.getItem('product')) || [
         id : 3,
         year : 2005,
         make : 'Luke',
-        image :"",
+        image :"https://i.ibb.co/0DpmNDZ/5.jpg",
         price : 12000,
         description: 'Description for Product 3'
     },
@@ -31,7 +31,7 @@ let products = JSON.parse(localStorage.getItem('product')) || [
         id : 4,
         year : 2023,
         make : 'Linda',
-        image : "",
+        image : "https://i.ibb.co/vwkx05G/4.jpg ",
         price : 22500,
         description: 'Description for Product 4'
     },
@@ -39,7 +39,7 @@ let products = JSON.parse(localStorage.getItem('product')) || [
         id : 5,
         year : 2013,
         make : 'liam',
-        image :"",
+        image :"https://i.ibb.co/NFsSMdF/7.jpg",
         price : 22001,
         description: 'Description for Product 5'
     },
@@ -101,12 +101,9 @@ function displayProducts() {
             <img src="${product.image}" class="card-img-top" alt="${product.id}">
             <div class="card-body">
             <h5 class="card-title">${product.make}</h5>
-            <p class="card-text">${product.price}</p>
+            <p class="card-text">R${product.price}</p>
             </div>
-              <div class="card-footer">
-              <button type='button' class="btn btn-primary" onclick='addToPay(${JSON.stringify(product)})'>Cart</button>
-              </div>
-            </div>
+              <button type='button' class="btn btn-primary" onclick='addToPay(${JSON.stringify(product)})'>Cart</button>              </div>
         `;
     });
 }
